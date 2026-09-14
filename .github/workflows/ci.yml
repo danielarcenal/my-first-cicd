@@ -18,9 +18,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    # FIX: Run the browser installation directly using the local node module binary pathway
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: ./node_modules/.bin/playwright install --with-deps
 
+    # FIX: Run the tests directly using your package.json test script definitions
     - name: Run Playwright BDD tests
       run: npm test
 
