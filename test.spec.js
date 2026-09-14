@@ -4,6 +4,6 @@ import path from 'path';
 test('Verify website has the correct title', async ({ page }) => {
   const filePath = path.resolve('index.html');
   await page.goto(`file://${filePath}`);
-  await expect(page).toHaveTitle('My Awesome Website');
+  await expect(page).toHaveTitle('My Broken Website');
 });
 
